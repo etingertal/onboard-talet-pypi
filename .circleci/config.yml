@@ -25,4 +25,5 @@ jobs:
             ./jfrog rt pipi -r requirements.txt --build-name=circleci-pip-build --build-number=$CIRCLE_BUILD_NUM --module=jfrog-python-example --trusted-host 35.207.143.222
             ./jfrog rt u dist/ onboard-pypi-repo-local --build-name=circleci-pip-build --build-number=$CIRCLE_BUILD_NUM --module=jfrog-python-example --server-id=ha-arti
             ./jfrog rt bce circleci-pip-build $CIRCLE_BUILD_NUM
+            ./jfrog rt bp circleci-pip-build $CIRCLE_BUILD_NUM
 #            ./jfrog rt u <path/to/artifact> <artifactory_repo_name> --build-name=<name_you_give_to_build> --build-number=$CIRCLE_BUILD_NUM
