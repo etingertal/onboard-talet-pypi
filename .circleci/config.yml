@@ -15,17 +15,6 @@ jobs:
           name: Install jFrog CLI
           command: curl -fL https://getcli.jfrog.io | sh
       - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            pytest -v --cov=calculator
-      - run:
           name: Push to Artifactory
           command: |
             ./jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USER --apikey $ARTIFACTORY_APIKEY --interactive=false ha-arti
